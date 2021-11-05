@@ -10,7 +10,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use \yii\web\Response;
 use yii\helpers\Html;
-
+use app\models\User;
 
 /**
  * NominatifPegawaiController implements the CRUD actions for NominatifPegawai model.
@@ -254,20 +254,26 @@ class NominatifPegawaiController extends Controller
        
     }
 
-
-    /*
     public function actionBatchCreate()
     {   
-        ini_set(varname:'maxdb_execute_time',newvalue:10000000);
+        ini_set('maxdb_execute_time',10000000);
         $connection=User::getDb();
-        $q=$connection->createCommand(sql:"select nip from nominatif_pegawai",[
-            ':hash'=>Yii::$app->security->generatePasswordHash(password:'123456'),
+        $q=$connection->createCommand("SELECT nip AS username,
+                            :hash AS password_hash,
+                            10 AS STATUS,
+                            :auth_key AS  auth_key,
+                            concat(id,nip,'@rsjogja.id') AS email,
+                            UNIX_TIMESTAMP(NOW()) AS created_at,
+                            UNIX_TIMESTAMP(NOW()) AS updated_at
+                            FROM  nominatif_pegawai",
+            [
+            ':hash'=>Yii::$app->security->generatePasswordHash('123456'),
             ':auth_key'=>Yii::$app->security->generateRandomString()
         ])->queryAll();
         $transaction=$connection->beginTransaction();
         try{
             $connection->createCommand()
-            ->BatchInsert(table:'user',[username],$q)
+            ->BatchInsert('user',['username','password_hash','status','auth_key','email','created_at','updated_at'],$q)
             ->execute();
             $transaction->commit();
         } catch(\exception $e) {
@@ -277,8 +283,39 @@ class NominatifPegawaiController extends Controller
             $transaction->rollback();
             throw $e; 
         }
-        Yii::$app->session->setFlash(key:'success',value:'User:'.count($q));
-        return $this->redirect(['/index'])
+        Yii::$app->session->setFlash('success','User:'.count($q));
+        return $this->redirect(['/index']);
+    } 
+    /*
+
+    id_pegawai.'@rsjogja.id' AS email,
+
+
+
+
+    public function actionBatchCreate()
+    {   
+        ini_set('maxdb_execute_time',10000000);
+        $connection=User::getDb();
+        $q=$connection->createCommand("select nip from nominatif_pegawai",[
+            ':password_hash'=>Yii::$app->security->generatePasswordHash('123456'),
+            ':auth_key'=>Yii::$app->security->generateRandomString()
+        ])->queryAll();
+        $transaction=$connection->beginTransaction();
+        try{
+            $connection->createCommand()
+            ->BatchInsert('user',['username','password_hash','auth_key'],$q)
+            ->execute();
+            $transaction->commit();
+        } catch(\exception $e) {
+            $transaction->rollback();
+            throw $e;
+        } catch(\Throwable $e) {
+            $transaction->rollback();
+            throw $e; 
+        }
+        Yii::$app->session->setFlash('success','User:'.count($q));
+        return $this->redirect(['/index']);
     }  */
     /**
      * Finds the NominatifPegawai model based on its primary key value.
