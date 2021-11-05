@@ -42,7 +42,7 @@ class PenilaianController extends Controller
     {    
         $searchModel = new PenilaianSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
+        $dataProvider->query->andFilterWhere(['nip_penilai' => Yii::$app->user->identity->username]);
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
