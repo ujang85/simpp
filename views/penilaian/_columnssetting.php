@@ -10,6 +10,12 @@ return [
     [
         'class'=>'\kartik\grid\DataColumn',
         'attribute'=>'id_penilai',
+        'value'=>'penilai.nip',
+        'header'=>'NIP Penilai',
+    ],
+    [
+        'class'=>'\kartik\grid\DataColumn',
+        'attribute'=>'id_penilai',
         'value'=>'penilai.nama',
     ],
     [

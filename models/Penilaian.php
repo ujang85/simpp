@@ -32,7 +32,7 @@ class Penilaian extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nip_penilai','user_input','id_penilai', 'id_peg_dinilai', 'nilai_disiplin', 'nilai_dedikasi', 'nilai_tanggungjawab'], 'integer'],
+            [['nip_penilai','user_input','id_penilai', 'id_peg_dinilai', 'nilai_disiplin', 'nilai_dedikasi', 'nilai_tanggungjawab'], 'integer','message'=>'harus diisi angka'],
             [['tgl_input'], 'safe'],
             [['usulan'], 'string', 'max' => 200],
         ];
@@ -61,6 +61,19 @@ class Penilaian extends \yii\db\ActiveRecord
     public function getDinilai()
     {
         return $this->hasOne(NominatifPegawai::className(), [ 'id'=> 'id_peg_dinilai']);
+    }
+
+    public function getDivisi()
+    {
+    return $this->hasOne(Unitkerja::className(),[ 'id'=>'unit_kerja'] )
+        ->viaTable('nominatif_pegawai',['id' => 'id_penilai']);
+    }
+
+    public function getTglsekarang()
+    {
+        $sql1 = "SELECT DATE_FORMAT(now(), '%Y-%m-%d') as tglsekarang";
+        $tglsekarang=Yii::$app->db->createCommand($sql1)->queryScalar(); 
+        return $tglsekarang;
     }
     /**
      * {@inheritdoc}

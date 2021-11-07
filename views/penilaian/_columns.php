@@ -7,11 +7,13 @@ return [
         'width' => '30px',
         'header' => 'No.',
     ],
+
     [
         'class'=>'\kartik\grid\DataColumn',
         'attribute'=>'id_penilai',
         'value'=>'penilai.nama',
     ],
+
     [
         'class'=>'\kartik\grid\DataColumn',
         'attribute'=>'id_peg_dinilai',
@@ -29,14 +31,24 @@ return [
         'class'=>'\kartik\grid\DataColumn',
         'attribute'=>'nilai_tanggungjawab',
     ],
+     
      [
+        'format'=>'raw',
+        'header'=>'subtotal',
+        'value' => function($model){                        
+        return  $model->nilai_disiplin + $model->nilai_dedikasi + $model->nilai_tanggungjawab;                            
+                                }
+    ],   
+    [
          'class'=>'\kartik\grid\DataColumn',
          'attribute'=>'usulan',
      ],
-    // [
-        // 'class'=>'\kartik\grid\DataColumn',
-        // 'attribute'=>'tgl_input',
-    // ],
+    [
+        'class'=>'\kartik\grid\DataColumn',
+        'attribute'=>'id_penilai',
+        'value'=>'divisi.nama_unit',
+        'header' => 'Unit Kerja',
+    ],
    [
         'format'=>'raw',
         'header'=>'INPUT NILAI',

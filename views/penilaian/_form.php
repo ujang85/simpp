@@ -17,7 +17,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nilai_tanggungjawab')->textInput() ?>
 
-    <?= $form->field($model, 'usulan')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'usulan')->textarea(['maxlength' => true]) ?>
 
   
 	<?php if (!Yii::$app->request->isAjax){ ?>

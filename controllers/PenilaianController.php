@@ -224,7 +224,14 @@ class PenilaianController extends Controller
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                                 Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
                 ];         
-            }else if($model->load($request->post()) && $model->save()){
+            } else if ($model->load(Yii::$app->request->post())) {
+                $model->nilai_disiplin = $model->nilai_disiplin;
+                $model->nilai_dedikasi = $model->nilai_dedikasi;
+                $model->nilai_tanggungjawab = $model->nilai_tanggungjawab;
+                $model->usulan = $model->usulan;
+                $model->tgl_input = Yii::$app->formatter->asDate($model->tglsekarang, 'php:Y-m-d');
+                $model->user_input = Yii::$app->user->identity->id;
+                $model->save();
                 return [
                     'forceReload'=>'#crud-datatable-pjax',
                     'title'=> "Penilaian",
