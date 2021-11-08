@@ -10,7 +10,7 @@ use johnitvn\ajaxcrud\BulkButtonWidget;
 /* @var $searchModel app\models\PenilaianSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Penilaians';
+$this->title = 'Penilaian';
 $this->params['breadcrumbs'][] = $this->title;
 
 CrudAsset::register($this);
@@ -23,7 +23,7 @@ CrudAsset::register($this);
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
             'pjax'=>true,
-            'columns' => require(__DIR__.'/_columns.php'),
+            'columns' => require(__DIR__.'/_columnsall.php'),
             'toolbar'=> [
                 ['content'=>
                     '{toggleData}'.

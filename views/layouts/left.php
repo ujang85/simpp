@@ -48,18 +48,9 @@
                     ['label' => 'SETTING PENILAIAN','icon' => 'user-plus', 'url' =>['/penilaian/indexsetting']],
                    
                     ['label' => 'PENILAIAN PEGAWAI','icon' => 'user-plus', 'url' =>['/penilaian/index']],
+                    ['label' => 'CETAK ALL PENILAIAN','icon' => 'file-excel-o', 'url' =>['/penilaian/index-all']],
                         
-                    [
-                                'label' => 'SKOR',
-                                'icon' => 'calendar-o',
-                                'url' => '#',
-                                'items' => [
-                                    ['label' => 'DOKTER', 'icon' => 'circle-o', 'url' => ['/skor/indexdokter']],
-                                    ['label' => 'PERAWAT', 'icon' => 'circle-o', 'url' => ['/skor/indexperawat']],
-                                    ['label' => 'KPKL', 'icon' => 'circle-o', 'url' => ['/skor/indexkpkl']],
-                                    ['label' => 'UMUM', 'icon' => 'circle-o', 'url' => ['/skor/indexumum']],
-                                ],],
-
+                    
                     ],
                         
             ]

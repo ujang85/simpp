@@ -26,16 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= $form->field($model, 'email') ?>
 
                 <?= $form->field($model, 'password')->passwordInput() ?>
-                <?=
-                  $form->field($model, 'unit')->widget(Select2::classname(),[
-                    'data'=>ArrayHelper::map(Rumpun::find()->all(),'nama_rumpun','nama_rumpun'),
-                    'options' => ['placeholder' => 'Pilih Rumpun...'],
-                    'pluginOptions' => [
-                        'allowClear' => true
-                    ],
-                ]);
-                    
-                ?>
+                
 
                 <div class="form-group">
                     <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>

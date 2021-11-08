@@ -7,12 +7,12 @@ return [
         'width' => '30px',
         'header' => 'No.',
     ],
-/*
+
     [
         'class'=>'\kartik\grid\DataColumn',
         'attribute'=>'id_penilai',
         'value'=>'penilai.nama',
-    ], */
+    ],
 
     [
         'class'=>'\kartik\grid\DataColumn',
@@ -49,13 +49,5 @@ return [
         'value'=>'divisi.nama_unit',
         'header' => 'Unit Kerja',
     ],
-   [
-        'format'=>'raw',
-        'header'=>'INPUT NILAI',
-        'value' => function($data){                        
-        return                        
-        Html::a('<span class="fa  fa-edit"></span> INPUT NILAI', ['update','id'=>$data->id], ['title' => 'INPUT NILAI','role'=>'modal-remote','class'=>'btn btn-success']);                            
-                                }
-    ],   
 
 ];   

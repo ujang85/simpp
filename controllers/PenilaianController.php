@@ -38,6 +38,15 @@ class PenilaianController extends Controller
      * Lists all Penilaian models.
      * @return mixed
      */
+    public function actionIndexAll()
+    {    
+        $searchModel = new PenilaianSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        return $this->render('indexall', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
     public function actionIndex()
     {    
         $searchModel = new PenilaianSearch();

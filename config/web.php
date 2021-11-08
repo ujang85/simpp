@@ -83,20 +83,20 @@ $config = [
 
  ],
  //non aktifkan RBAC  
+ /*  */
   'as access' => [
              'class' => '\hscstudio\mimin\components\AccessControl',
              'allowActions' => [
                 // add wildcard allowed action here!
                 'site/*',
-            //    'skor/*',
-                'pegawai/*',
              //   'site/signup',
                // 'debug/*',
-             //   'mimin/',
-                'gii/*',
-                'unitkerja/*',
-                'penilaian/*',
-                'nominatif-pegawai/*',
+            //    'mimin/',
+            //    'gii/*',
+             //   'unitkerja/*',
+                'penilaian/index',
+                'penilaian/update',
+             //   'nominatif-pegawai/*',
             //    'mimin/user', // only in dev mode
                 
             ],

@@ -21,7 +21,7 @@ $fieldOptions2 = [
 <br> </br>
 
   <div>
-        <center><h4><b>SISTEM PENILAIAN PEGAWAI TELADAN</b></h4></center>
+        <center><h4><b>SISTEM PENILAIAN PEGAWAI</b></h4></center>
         <br>
         <center><h2><b>RSUD KOTA YOGYAKARTA</b></h2></center>
     </div>

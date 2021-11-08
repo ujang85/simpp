@@ -8,7 +8,7 @@ $this->title = '';
 
     <div class="jumbotron">
 
-        <p class="lead">SISTEM PENILAIAN PEGAWAI TELADAN</p>
+        <p class="lead">SISTEM PENILAIAN PEGAWAI</p>
         <p class="lead"><h2>RSUD KOTA YOGYAKARTA</h2></p>
         <p class="lead"><h2>TAHUN 2021</h2></p>     
     </div>
