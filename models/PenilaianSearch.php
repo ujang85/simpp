@@ -15,11 +15,13 @@ class PenilaianSearch extends Penilaian
     /**
      * @inheritdoc
      */
+  //  public $id_unitkerja;
+    public $nama2;
     public function rules()
     {
         return [
-            [['user_input','id', 'id_penilai', 'id_peg_dinilai', 'nilai_disiplin', 'nilai_dedikasi', 'nilai_tanggungjawab'], 'integer'],
-            [['usulan', 'tgl_input'], 'safe'],
+            [['user_input','id',  'id_peg_dinilai', 'nilai_disiplin', 'nilai_dedikasi', 'nilai_tanggungjawab'], 'integer'],
+            [['id_unitkerja','usulan', 'nama2','tgl_input'], 'safe'],
         ];
     }
 
@@ -54,11 +56,12 @@ class PenilaianSearch extends Penilaian
             // $query->where('0=1');
             return $dataProvider;
         }
-
+       $query ->joinWith('divisi');
+        $query ->joinWith('dinilai');
         $query->andFilterWhere([
             'id' => $this->id,
-            'id_penilai' => $this->id_penilai,
-            'id_peg_dinilai' => $this->id_peg_dinilai,
+            'id_unitkerja' => $this->id_unitkerja,
+        //    'id_peg_dinilai' => $this->id_peg_dinilai,
             'nilai_disiplin' => $this->nilai_disiplin,
             'nilai_dedikasi' => $this->nilai_dedikasi,
             'nilai_tanggungjawab' => $this->nilai_tanggungjawab,
@@ -66,6 +69,8 @@ class PenilaianSearch extends Penilaian
         ]);
 
         $query->andFilterWhere(['like', 'usulan', $this->usulan]);
+     //   $query->andFilterWhere(['like', 'nama', $this->nama]);
+        $query->andFilterWhere(['like', 'nama2', $this->nama2]);
 
         return $dataProvider;
     }

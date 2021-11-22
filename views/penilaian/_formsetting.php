@@ -25,6 +25,7 @@ use app\models\NominatifPegawai;
     ]);
     ?>
     <?= $form->field($model, 'nip_penilai')->hiddenInput()->label(false); ?>
+    <?= $form->field($model, 'id_unitkerja')->hiddenInput()->label(false); ?>
     <?=  $form->field($model, 'id_peg_dinilai')->widget(Select2::classname(), [
     'data' =>ArrayHelper::map(NominatifPegawai::find()->all(),'id','nama'),
     'options' => ['placeholder' => 'Pilih Pegawai Yg Dinilai ...'],
@@ -53,6 +54,7 @@ $script = <<< JS
         var data = $.parseJSON(data);
     //  alert(data);
         $('#penilaian-nip_penilai').attr('value',data.nip);
+        $('#penilaian-id_unitkerja').attr('value',data.unit_kerja);
       });
     });
 JS;

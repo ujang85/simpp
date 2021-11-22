@@ -7,17 +7,19 @@ return [
         'width' => '30px',
         'header' => 'No.',
     ],
-/*
+
     [
         'class'=>'\kartik\grid\DataColumn',
         'attribute'=>'id_penilai',
         'value'=>'penilai.nama',
-    ], */
+    ], 
 
     [
         'class'=>'\kartik\grid\DataColumn',
-        'attribute'=>'id_peg_dinilai',
-        'value'=>'dinilai.nama',
+      //  'attribute'=>'id_peg_dinilai',
+       'attribute'=>'nama2',
+        'value'=>'dinilai.nama2',
+        'header'=>'Pegawai Yg Dinilai',
     ],
     [
         'class'=>'\kartik\grid\DataColumn',

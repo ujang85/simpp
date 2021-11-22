@@ -1,6 +1,9 @@
 <?php
 use yii\helpers\Url;
-use yii\helpers\Html;
+//use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
+use app\models\Unitkerja;
+use kartik\grid\GridView;
 return [
     [
         'class' => 'kartik\grid\SerialColumn',
@@ -14,10 +17,12 @@ return [
         'value'=>'penilai.nama',
     ],
 
-    [
+   [
         'class'=>'\kartik\grid\DataColumn',
-        'attribute'=>'id_peg_dinilai',
-        'value'=>'dinilai.nama',
+      //  'attribute'=>'id_peg_dinilai',
+       'attribute'=>'nama2',
+        'value'=>'dinilai.nama2',
+        'header'=>'Pegawai Yg Dinilai',
     ],
     [
         'class'=>'\kartik\grid\DataColumn',
@@ -43,11 +48,14 @@ return [
          'class'=>'\kartik\grid\DataColumn',
          'attribute'=>'usulan',
      ],
-    [
+    
+   [
         'class'=>'\kartik\grid\DataColumn',
-        'attribute'=>'id_penilai',
+        'attribute'=>'id_unitkerja',      
+        'filterType' => GridView::FILTER_SELECT2,                
+        'filter' => ArrayHelper::map(Unitkerja::find()->all(), 'id', 'nama_unit'),
+        'filterInputOptions' => [ 'placeholder' => '*All*' ],
         'value'=>'divisi.nama_unit',
-        'header' => 'Unit Kerja',
+         'contentOptions' => ['style' => 'width:200px; white-space: normal;'],
     ],
-
 ];   

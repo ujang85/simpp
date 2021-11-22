@@ -35,7 +35,7 @@ class NominatifPegawai extends \yii\db\ActiveRecord
     {
         return [
             [['unit_kerja'], 'integer'],
-            [['nama'], 'string', 'max' => 49],
+            [['nama','nama2'], 'string', 'max' => 49],
             [['status'], 'string', 'max' => 27],
             [['nip', 'pangkat'], 'string', 'max' => 20],
             [['jenis'], 'string', 'max' => 1],

@@ -29,11 +29,13 @@ class Penilaian extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
+  //  public $id_unitkerja;
+    public $nama2;
     public function rules()
     {
         return [
             [['nip_penilai','user_input','id_penilai', 'id_peg_dinilai', 'nilai_disiplin', 'nilai_dedikasi', 'nilai_tanggungjawab'], 'integer','message'=>'harus diisi angka'],
-            [['tgl_input'], 'safe'],
+            [['id_unitkerja','nama2','tgl_input'], 'safe'],
             [['usulan'], 'string', 'max' => 200],
         ];
     }
@@ -52,18 +54,23 @@ class Penilaian extends \yii\db\ActiveRecord
             'nilai_tanggungjawab' => 'Nilai Tanggungjawab',
             'usulan' => 'Usulan',
             'tgl_input' => 'Tgl Input',
+            'id_unitkerja'=> 'Unit Kerja',
         ];
     }
     public function getPenilai()
     {
-        return $this->hasOne(NominatifPegawai::className(), [ 'id'=> 'id_penilai']);
-    }
+        return $this->hasOne(NominatifPegawai::className(), [ 'nip'=> 'nip_penilai']);
+    } 
     public function getDinilai()
     {
         return $this->hasOne(NominatifPegawai::className(), [ 'id'=> 'id_peg_dinilai']);
     }
-
     public function getDivisi()
+    {
+    return $this->hasOne(Unitkerja::className(),[ 'id'=>'id_unitkerja']);
+        
+    }
+    public function getDivisiXX()
     {
     return $this->hasOne(Unitkerja::className(),[ 'id'=>'unit_kerja'] )
         ->viaTable('nominatif_pegawai',['id' => 'id_penilai']);

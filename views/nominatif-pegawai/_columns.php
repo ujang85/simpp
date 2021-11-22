@@ -8,10 +8,10 @@ return [
         'width' => '30px',
         'header' => 'No.',
     ],
-        // [
-        // 'class'=>'\kartik\grid\DataColumn',
-        // 'attribute'=>'id',
-    // ],
+         [
+         'class'=>'\kartik\grid\DataColumn',
+         'attribute'=>'id',
+     ],
     [
         'class'=>'\kartik\grid\DataColumn',
         'attribute'=>'nama',
@@ -20,6 +20,12 @@ return [
         'class'=>'\kartik\grid\DataColumn',
         'attribute'=>'unit_kerja',
         'value'=>'unit.nama_unit',
+    ],
+  /*   */
+    [
+        'class'=>'\kartik\grid\DataColumn',
+        'attribute'=>'unit_kerja',
+       // 'value'=>'unit.nama_unit',
     ],
     [
         'class'=>'\kartik\grid\DataColumn',
