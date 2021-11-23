@@ -19,7 +19,7 @@ class NominatifPegawaiSearch extends NominatifPegawai
     {
         return [
             [['id', 'unit_kerja'], 'integer'],
-            [['nama', 'status', 'nip', 'jenis', 'pangkat', 'golongan', 'jabatan', 'pendidikan', 'alamat'], 'safe'],
+            [['unit_kerja','nama', 'status', 'nip', 'jenis', 'pangkat', 'golongan', 'jabatan', 'pendidikan', 'alamat'], 'safe'],
         ];
     }
 
@@ -54,7 +54,7 @@ class NominatifPegawaiSearch extends NominatifPegawai
             // $query->where('0=1');
             return $dataProvider;
         }
-
+        $query ->joinWith('unit');
         $query->andFilterWhere([
             'id' => $this->id,
             'unit_kerja' => $this->unit_kerja,

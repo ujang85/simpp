@@ -1,6 +1,9 @@
 <?php
 use yii\helpers\Url;
 use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
+use app\models\Unitkerja;
+use kartik\grid\GridView;
 
 return [
    [
@@ -8,10 +11,10 @@ return [
         'width' => '30px',
         'header' => 'No.',
     ],
-         [
+    /*     [
          'class'=>'\kartik\grid\DataColumn',
          'attribute'=>'id',
-     ],
+     ], */
     [
         'class'=>'\kartik\grid\DataColumn',
         'attribute'=>'nama',
@@ -21,12 +24,12 @@ return [
         'attribute'=>'unit_kerja',
         'value'=>'unit.nama_unit',
     ],
-  /*   */
+  /*   
     [
         'class'=>'\kartik\grid\DataColumn',
         'attribute'=>'unit_kerja',
        // 'value'=>'unit.nama_unit',
-    ],
+    ], */
     [
         'class'=>'\kartik\grid\DataColumn',
         'attribute'=>'status',
@@ -39,26 +42,16 @@ return [
         'class'=>'\kartik\grid\DataColumn',
         'attribute'=>'jenis',
     ],
-    // [
-        // 'class'=>'\kartik\grid\DataColumn',
-        // 'attribute'=>'pangkat',
-    // ],
-    // [
-        // 'class'=>'\kartik\grid\DataColumn',
-        // 'attribute'=>'golongan',
-    // ],
-    // [
-        // 'class'=>'\kartik\grid\DataColumn',
-        // 'attribute'=>'jabatan',
-    // ],
-    // [
-        // 'class'=>'\kartik\grid\DataColumn',
-        // 'attribute'=>'pendidikan',
-    // ],
-    // [
-        // 'class'=>'\kartik\grid\DataColumn',
-        // 'attribute'=>'alamat',
-    // ],
+    [
+        'class'=>'\kartik\grid\DataColumn',
+        'attribute'=>'unit_kerja',      
+        'filterType' => GridView::FILTER_SELECT2,                
+        'filter' => ArrayHelper::map(Unitkerja::find()->all(), 'id', 'nama_unit'),
+        'filterInputOptions' => [ 'placeholder' => '*All*' ],
+        'value'=>'unit.nama_unit',
+         'contentOptions' => ['style' => 'width:200px; white-space: normal;'],
+    ],
+   
     [
         'format'=>'raw',
         'header'=>'EDIT',
