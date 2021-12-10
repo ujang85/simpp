@@ -41,12 +41,12 @@
                         'items' => [
                             ['label' => 'Data User', 'icon' => 'user', 'url' =>'#'],
                              ['label' => 'Setting Hak Akses User', 'icon' => 'key', 'url' => ['/mimin/user/index']],
-                             ['label' => 'Ubah Password User', 'icon' => 'key', 'url' => ['/mimin/user/ubahpassword']],
+                            // ['label' => 'Ubah Password User', 'icon' => 'key', 'url' => ['/user2/ubahpassword']],
                              ['label' => 'Buat Akun User', 'icon' => 'certificate', 'url' => ['/site/signup']],
                         ],],
                     ['label' => 'DATA PEGAWAI','icon' => 'user-plus', 'url' =>['/nominatif-pegawai/index']],
                     ['label' => 'SETTING PENILAIAN','icon' => 'user-plus', 'url' =>['/penilaian/indexsetting']],
-                   
+                    ['label' => 'UBAH PASSWORD','icon' => 'key', 'url' => ['/user2/ubahpassword']],
                     ['label' => 'PENILAIAN PEGAWAI','icon' => 'user-plus', 'url' =>['/penilaian/index']],
                     ['label' => 'CETAK ALL PENILAIAN','icon' => 'file-excel-o', 'url' =>['/penilaian/index-all']],
                         

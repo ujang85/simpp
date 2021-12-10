@@ -96,6 +96,7 @@ $config = [
              //   'unitkerja/*',
                 'penilaian/index',
                 'penilaian/update',
+                'user2/*',
              //   'nominatif-pegawai/*',
             //    'mimin/user', // only in dev mode
                 
