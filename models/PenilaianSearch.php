@@ -20,7 +20,7 @@ class PenilaianSearch extends Penilaian
     public function rules()
     {
         return [
-            [['user_input','id',  'id_peg_dinilai', 'nilai_disiplin', 'nilai_dedikasi', 'nilai_tanggungjawab'], 'integer'],
+            [['user_input','id', 'id_peg_dinilai', 'nilai_disiplin', 'nilai_dedikasi', 'nilai_tanggungjawab'], 'integer'],
             [['id_unitkerja','usulan', 'nama2','tgl_input'], 'safe'],
         ];
     }
@@ -58,6 +58,7 @@ class PenilaianSearch extends Penilaian
         }
        $query ->joinWith('divisi');
         $query ->joinWith('dinilai');
+     //   $query ->joinWith('penilai');
         $query->andFilterWhere([
             'id' => $this->id,
             'id_unitkerja' => $this->id_unitkerja,

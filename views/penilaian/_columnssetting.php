@@ -3,6 +3,7 @@ use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use app\models\Unitkerja;
+use app\models\NominatifPegawai;
 use kartik\grid\GridView;
 return [
    [
@@ -18,10 +19,11 @@ return [
     ],
     [
         'class'=>'\kartik\grid\DataColumn',
-        'attribute'=>'id_penilai',
-      //  'attribute'=>'nama',
+        'attribute'=>'id_penilai',      
         'value'=>'penilai.nama',
-    ], 
+         'contentOptions' => ['style' => 'width:200px; white-space: normal;'],
+    ],
+   
     [
         'class'=>'\kartik\grid\DataColumn',
       //  'attribute'=>'id_peg_dinilai',

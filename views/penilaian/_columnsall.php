@@ -37,11 +37,18 @@ return [
         'attribute'=>'nilai_tanggungjawab',
     ],
      
-     [
+    [
         'format'=>'raw',
         'header'=>'subtotal',
         'value' => function($model){                        
         return  $model->nilai_disiplin + $model->nilai_dedikasi + $model->nilai_tanggungjawab;                            
+                                }
+    ],   
+    [
+        'format'=>'raw',
+        'header'=>'Rata-rata',
+        'value' => function($model){                        
+        return  ($model->nilai_disiplin + $model->nilai_dedikasi + $model->nilai_tanggungjawab)/3;                            
                                 }
     ],   
     [
