@@ -46,7 +46,7 @@ return [
     ],   
     [
         'format'=>'raw',
-        'header'=>'Rata-rata',
+        'header'=>'Rata-rata Nilai',
         'value' => function($model){                        
         return round($model->nilai_disiplin + $model->nilai_dedikasi + $model->nilai_tanggungjawab)/3;                            
                                 }
