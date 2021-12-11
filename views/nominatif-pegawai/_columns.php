@@ -57,7 +57,7 @@ return [
         'header'=>'EDIT',
         'value' => function($data){                        
         return                        
-        Html::a('<span class="fa  fa-edit"></span> Update', ['updatesetting','id'=>$data->id], ['title' => 'Edit','role'=>'modal-remote','class'=>'btn btn-success']).' '.                            
+        Html::a('<span class="fa  fa-edit"></span> Update', ['update','id'=>$data->id], ['title' => 'Edit','role'=>'modal-remote','class'=>'btn btn-success']).' '.                            
         Html::a('<span class="fa  fa-eraser"></span> View', ['view','id'=>$data->id], ['title' => 'View','role'=>'modal-remote','class'=>'btn btn-info']);                            
                                 }
     ],   
