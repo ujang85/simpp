@@ -48,7 +48,9 @@
                     ['label' => 'SETTING PENILAIAN','icon' => 'user-plus', 'url' =>['/penilaian/indexsetting']],
                     ['label' => 'UBAH PASSWORD','icon' => 'key', 'url' => ['/user2/ubahpassword']],
                     ['label' => 'PENILAIAN PEGAWAI','icon' => 'user-plus', 'url' =>['/penilaian/index']],
+                    ['label' => 'PRESENSI PEGAWAI','icon' => 'user-plus', 'url' =>['/presensi-total/index']],
                     ['label' => 'CETAK ALL PENILAIAN','icon' => 'file-excel-o', 'url' =>['/penilaian/index-all']],
+                    ['label' => 'PENILAIAN & PRESENSI','icon' => 'file-excel-o', 'url' =>['/gabung-nilai/index']],
                         
                     
                     ],
