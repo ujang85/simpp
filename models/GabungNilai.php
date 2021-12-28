@@ -60,7 +60,7 @@ class GabungNilai extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'nip_penilai' => 'Nip Penilai',
+            'nip_penilai' => 'NIP Penilai',
             'penilai' => 'Penilai',
             'status' => 'Status',
             'jabatan' => 'Jabatan',
@@ -71,9 +71,9 @@ class GabungNilai extends \yii\db\ActiveRecord
             'nilai_tanggungjawab' => 'Nilai Tanggungjawab',
             'subtotal' => 'Subtotal',
             'rerata' => 'Rerata',
-            'tl' => 'Tl',
-            'psw' => 'Psw',
-            'tk' => 'Tk',
+            'tl' => 'TL',
+            'psw' => 'PSW',
+            'tk' => 'TK',
             'akumulasi1' => 'Akumulasi1',
             'akumulasi2' => 'Akumulasi2',
             'usulan' => 'Usulan',
