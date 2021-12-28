@@ -25,15 +25,16 @@ return [
     ],
     [
         'class'=>'\kartik\grid\DataColumn',
-        'attribute'=>'status',
-    ],
-    [
-        'class'=>'\kartik\grid\DataColumn',
         'attribute'=>'jabatan',
     ],
     [
         'class'=>'\kartik\grid\DataColumn',
         'attribute'=>'pegawai_dinilai',
+    ],
+    [
+        'class'=>'\kartik\grid\DataColumn',
+        'header'=>'Status Pegawai',
+        'value'=>'pegawai.status',
     ],
     [
         'class'=>'\kartik\grid\DataColumn',

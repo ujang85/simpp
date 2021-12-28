@@ -79,7 +79,10 @@ class GabungNilai extends \yii\db\ActiveRecord
             'usulan' => 'Usulan',
         ];
     }
-
+    public function getPegawai()
+    {
+        return $this->hasOne(NominatifPegawai::className(), [ 'nama'=> 'pegawai_dinilai']);
+    } 
     /**
      * {@inheritdoc}
      * @return GabungNilaiQuery the active query used by this AR class.
